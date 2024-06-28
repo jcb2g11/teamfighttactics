@@ -1,0 +1,8 @@
+<div *ngIf="leagueList">
+    <h1>{{ leagueList.name }} ({{ leagueList.tier }})</h1>
+    <ul>
+      <li *ngFor="let entry of leagueList.entries">
+        {{ entry.summonerName }} - {{ entry.rank }} - {{ entry.leaguePoints }} LP
+      </li>
+    </ul>
+  </div>
