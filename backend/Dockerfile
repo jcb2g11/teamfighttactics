@@ -1,4 +1,4 @@
-# Use an official OpenJDK runtime as a parent image
+# Use an official amazoncorretto runtime as a parent image
 FROM amazoncorretto:22-alpine-jdk
 
 MAINTAINER cedricbondoc.com
