@@ -41,7 +41,7 @@ jobs:
         run: mvn test
         
       - name: Build with Maven
-        run: ./mvnw clean install
+        run: mvn clean install
         working-directory: ./backend
 
       - name: Deploy to Render
