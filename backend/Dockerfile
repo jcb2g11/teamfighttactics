@@ -3,7 +3,7 @@ FROM amazoncorretto:22-alpine-jdk
 
 MAINTAINER cedricbondoc.com
 
-WORKDIR /app
+WORKDIR /usr
 
 
 RUN ls -l
