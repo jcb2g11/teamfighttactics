@@ -1,11 +1,10 @@
-FROM maven:3.9.2-eclipse-temurin-17-alpine as builder
+# Use an official amazoncorretto runtime as a parent image
+FROM amazoncorretto:22-alpine-jdk
 
-COPY ./src src/
-COPY ./pom.xml pom.xml
+MAINTAINER cedricbondoc.com
 
-RUN mvn clean package -DskipTests
+# Copy the application JAR file into the container at /app
+COPY target/*.jar app.jar
 
-FROM eclipse-temurin:17-jre-alpine
-COPY --from=builder target/*.jar app.jar
-EXPOSE 8080
-CMD ["java","-jar","app.jar"]
+# Run the JAR file
+ENTRYPOINT ["java", "-jar", "/app.jar"]
