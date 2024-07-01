@@ -23,7 +23,7 @@ interface LeagueItem {
   providedIn: 'root'
 })
 export class TftLeagueService {
-  private apiUrl = 'http://localhost:8080/api/v1/challengers'; // Your Spring Boot API URL
+  private apiUrl = 'https://teamfighttactics.onrender.com/api/v1/challengers'; // Your Spring Boot API URL
 
   constructor(private http: HttpClient) { }
 
