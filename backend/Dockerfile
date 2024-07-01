@@ -3,7 +3,7 @@ FROM amazoncorretto:22-alpine-jdk
 
 MAINTAINER cedricbondoc.com
 
-RUN ls -l ./backend/target
+RUN ls -l
 
 # Copy the application JAR file into the container at /app
 COPY ./backend/target/*.jar app.jar
