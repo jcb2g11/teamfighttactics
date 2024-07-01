@@ -1,11 +1,14 @@
+# Stage 1: Build stage
 FROM maven:3.9.8-amazoncorretto-17 as builder
 
-COPY ./src src/
-COPY ./pom.xml pom.xml
+COPY ./src /usr/src/app/src
+COPY ./pom.xml /usr/src/app/pom.xml
 
-RUN mvn clean package -DskipTests
+RUN mvn -f /usr/src/app/pom.xml clean package -DskipTests
 
+# Stage 2: Production stage
 FROM amazoncorretto:22-alpine-jdk
-COPY --from=builder target/*.jar app.jar
-EXPOSE 8080
-CMD ["java","-jar","app.jar"]
+
+COPY --from=builder /usr/src/app/target/*.jar /usr/app/app.jar
+
+CMD ["java", "-jar", "/usr/app/app.jar"]
