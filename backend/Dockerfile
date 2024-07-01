@@ -3,10 +3,10 @@ FROM amazoncorretto:22-alpine-jdk
 
 MAINTAINER cedricbondoc.com
 
-RUN ls -l ./target
+RUN ls -l ./backend/target
 
 # Copy the application JAR file into the container at /app
-COPY ./target/*.jar app.jar
+COPY ./backend/target/*.jar app.jar
 
 # Run the JAR file
 ENTRYPOINT ["java", "-jar", "/app.jar"]
