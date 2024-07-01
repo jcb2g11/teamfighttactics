@@ -1,11 +1,3 @@
-#
-# Build stage
-#
-FROM maven:3.9.8-amazoncorretto-8-al2023 AS build
-COPY . .
-RUN mvn clean package -DskipTests
-
-
 # Use an official amazoncorretto runtime as a parent image
 FROM amazoncorretto:22-alpine-jdk
 
