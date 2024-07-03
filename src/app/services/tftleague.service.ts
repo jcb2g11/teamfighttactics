@@ -1,33 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environment/environment';
+import { LeagueItemTO } from '../model/league-item-to.model';
 
-interface LeagueList {
-  leagueId: string;
-  tier: string;
-  name: string;
-  queue: string;
-  entries: LeagueItem[];
-}
-
-interface LeagueItem {
-  summonerId: string;
-  summonerName: string;
-  leaguePoints: number;
-  rank: string;
-  wins: number;
-  losses: number;
-}
 
 @Injectable({
   providedIn: 'root'
 })
 export class TftLeagueService {
-  private apiUrl = 'https://teamfighttactics.onrender.com/api/v1/challengers'; // Your Spring Boot API URL
+  private apiUrl = environment.apiUrl ; // Use the environment variable
 
   constructor(private http: HttpClient) { }
 
-  getChallengers(): Observable<LeagueList> {
-    return this.http.get<LeagueList>(this.apiUrl);
+  getChallengers(): Observable<LeagueItemTO[]> {
+    return this.http.get<LeagueItemTO[]>(`${this.apiUrl}/api/v1/challengers`);
   }
 }

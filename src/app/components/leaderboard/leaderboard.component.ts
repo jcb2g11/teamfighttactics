@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TftLeagueService } from '../../services/tftleague.service';
+import { LeagueItemTO } from '../../model/league-item-to.model';
 
 @Component({
   selector: 'app-leaderboard',
@@ -7,7 +8,7 @@ import { TftLeagueService } from '../../services/tftleague.service';
   styleUrl: './leaderboard.component.css'
 })
 export class LeaderboardComponent implements OnInit {
-  leagueList: any;
+  leagueList!: LeagueItemTO[];
 
   constructor(private leagueService: TftLeagueService) { }
 

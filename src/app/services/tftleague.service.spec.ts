@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { TftleagueService } from './tftleague.service';
+import { TftLeagueService } from './tftleague.service';
 
 describe('TftleagueService', () => {
-  let service: TftleagueService;
+  let service: TftLeagueService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(TftleagueService);
+    service = TestBed.inject(TftLeagueService);
   });
 
   it('should be created', () => {
