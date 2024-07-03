@@ -5,4 +5,5 @@ export interface LeagueItemTO {
   profileIconId: number;
   gameName: string;
   tagLine: string;
+  losses: number;
 }
