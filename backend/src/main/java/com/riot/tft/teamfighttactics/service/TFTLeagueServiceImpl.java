@@ -50,7 +50,7 @@ public class TFTLeagueServiceImpl implements TFTLeagueService {
 
   @Override
   public Summoner getSummoner(String encryptedSummonerId) throws Exception {
-    String url = "https://euw1.api.riotgames.com/lol/summoner/v4/summoners/" + encryptedSummonerId + "?api_key=" + apiKey;
+    String url = "https://euw1.api.riotgames.com/tft/summoner/v1/summoners/" + encryptedSummonerId + "?api_key=" + apiKey;
     return performGetRequest(url, Summoner.class);
   }
 }
