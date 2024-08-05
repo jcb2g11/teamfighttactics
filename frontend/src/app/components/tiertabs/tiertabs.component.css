@@ -15,7 +15,13 @@
   border-color: #007bff;
 }
 
-.nav-tabs .nav-link:hover {
+.nav-tabs .nav-link.disabled {
+  color: #6c757d;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.nav-tabs .nav-link:hover:not(.disabled) {
   color: #0056b3;
 }
 
