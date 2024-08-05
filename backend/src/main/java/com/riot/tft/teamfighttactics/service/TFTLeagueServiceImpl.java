@@ -35,10 +35,9 @@ public class TFTLeagueServiceImpl implements TFTLeagueService {
       throw new Exception(e.getMessage());
     }
   }
-
-  @Override
-  public LeagueList getChallengers() throws Exception {
-    String url = "https://euw1.api.riotgames.com/tft/league/v1/challenger?queue=RANKED_TFT&api_key=" + apiKey;
+  
+  public LeagueList getTierData(String tier) throws Exception {
+    String url = String.format("https://euw1.api.riotgames.com/tft/league/v1/%s?queue=RANKED_TFT&api_key=%s", tier.toLowerCase(), apiKey);
     return performGetRequest(url, LeagueList.class);
   }
 

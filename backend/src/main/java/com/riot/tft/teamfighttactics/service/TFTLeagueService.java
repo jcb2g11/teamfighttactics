@@ -6,7 +6,7 @@ import com.riot.tft.teamfighttactics.entity.Summoner;
 
 public interface TFTLeagueService {
 
-  LeagueList getChallengers() throws Exception;
+  LeagueList getTierData(String tier) throws Exception;
 
   Account getAccount(String puuid) throws Exception;
 

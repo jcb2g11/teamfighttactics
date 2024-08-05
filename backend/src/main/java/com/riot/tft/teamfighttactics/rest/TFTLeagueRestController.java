@@ -22,11 +22,12 @@ public class TFTLeagueRestController {
     this.tftLeagueService = tftLeagueService;
   }
 
-  @GetMapping("/challengers")
-  public List<LeagueItemTO> getChallengers() {
+
+  @GetMapping("/tier/{tier}")
+  public List<LeagueItemTO> getTierData(@PathVariable String tier) {
     List<LeagueItemTO> leagueItemTOList = new ArrayList<>();
     try {
-      LeagueList theLeagueList = tftLeagueService.getChallengers();
+      LeagueList theLeagueList = tftLeagueService.getTierData(tier);
       // Sort entries based on leaguePoints
       theLeagueList.sortEntriesByLeaguePoints();
 
